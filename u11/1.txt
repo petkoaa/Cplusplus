@@ -1,0 +1,47 @@
+//Info B//uebungsblatt 11//Petko Antonov//Yuwei Nan// 
+//Aufgabe 1 
+
+Prioritaetswarteschlange 
+
+
+b) VK PriorQueue		--einfach
+
+-	Ich wuerde fuer eine einfache Implementierung dieser verketteten Knoten 
+Prioritaetswarteschlange eine Struct VIP konstruieren wo ich ein Element E speichern 
+kann und noch die dazugehoerige int::Prioritaet .  (als Attribut der class VKPriorQueue:public PriorQueue)
+
+-	Dann noch als private ein int::anzahl Variable die den Anzahl aller Elemente in der Queue zeigt. 
+
+-	Konstruktor der eine neue VKPriorQueue erzeugt und anzahl auf 0 setzt. 
+
+-	CopyKOnstructor, Zuweiss.Operator, Destructor implementieren der dequeue() auf der Queue anwendet bis 
+	anzahl == 0 ist.
+
+- 	bool is_empty() const 
+		pruefen ob der int::anzahl == 0 
+		
+-	most_impotrant_element () const 
+		setzt eine Schleife die alle elemente untersucht und das Element mit der hoechsten Prioritaet liefert 
+		
+-	E dequeue() 
+		setzt eine Schleife die alle elemente untersucht und das Element mit der hoechsten Prioritaet liefert 
+		und entfernt das Element von der Queue
+		anzahl -- 
+
+-	enqueue(E element, int vip )
+		fuegt das Element in der Queue mit dem zugehoerige Prioritaet = vip 
+		beide in einem neuen struct 
+		anzahl++ 
+		
+		
+		
+		
+c) VK PriorQueue		--MaxHeap
+
+-	
+		
+		
+		
+
+		
+		

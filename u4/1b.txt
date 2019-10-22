@@ -1,0 +1,23 @@
+u4
+1b
+
+Call by Reference - die Variable wird an einer Funktion als Pointer oder als physikalische 
+	Adresse (Reference) weitergegeben;
+	
+	Das heisst dass wenn diese Funktion diese Variable irgendwie veraender oder 
+	neudefiniert wird es auch in alle andere Stellen auch veraendert weil jetzt die 
+	Adresse wo die Anfangswert gespeichert war jetzt eine neue Wert besitzt.  
+
+	es soll nur ein & zeichen vor dem Variblename im funktionsdefinition angegeben 
+	werden
+
+	funk (int &a);
+
+Call by Value - die Variable wird als Wert (value) angegeben und alle Veranderungen die 
+	in der Funktion ausgefurt werden gelten nur fur diesem Code-Block; 
+	dh die orginale Wert bleibt in der Pointer Adresse gespeichert und unveraendert;
+
+	syntax ist hier nur 
+	funk (int a) 
+
+  

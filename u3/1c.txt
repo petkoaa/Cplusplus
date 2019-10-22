@@ -1,0 +1,29 @@
+42// 	wenn int main() ausgefuhrt wird wird 2 mal die funktion f ausgewertet. F nimmt die
+3//	globele "b" und die lokale a die in f(a) sich befindet, und druckt diese werte auf 
+	dem Bildschirm. erst b = 42 und dann a = 3
+	Nach dem ersten f(::a)-6, 3*3=9, 9-6=3. Jetzt kriegt die nachste f() diese 3 die an 
+42//	die stelle der globale a in dem ersten ausfuhrung eingesetzt wird und weil die 
+3// 	globale a auch 3 war bekommen wir die gleiche werte auf Bildschirm noch einmal
+	  
+42//	i wird in der erste loop auf 0 gesetzt und die f(0) an zeile 19 pritiert globale b 
+0//	weche noch 42 ist und dann die lokale a was 0 ist
+
+ 	weiter an zeile 20 wird globale b auf 0 gesetzt 
+	weiter an zeile 21 wird globale a auf 4 gesetzt (3++ = 4)
+
+7168// hier wird der ausdruck a = a*::a*::a*::a*::a*::a; mit a= 7*4*4*4*4*4 jetzt wird die 
+	lokale a auf 7168 gesetzt 
+
+0// 	zeile 24 - a wird auf zeile 23 gleich b gesetzt. b ist lokal auf zeile 19 als gleich
+	f(0) was 0*0 = 0 betragt deswegen 0 wird printiert
+
+dx28fefc// dass ist das cout von zeile 26 also die physikalische adresse in RAM von i=0+1 
+
+
+///////////////  jetzt wird die "for" scheleife noch 3 mal ausgewertet (i=3 <9/2) ///////////
+
+	Die lezte 3 ausgaben sind die lezte cout von zeile 26 
+	dann wird noch einmal die selbe adresse von i (zeile 28) printiert weil jetz i in die
+	selbe adresse gespeichert wird 
+	die lezte gedruckte zeile wird i*::a ausgewerted i=7 und a soll schon riesig sein
+	schon grosser als die int format erlaubt dswegen wird ald eine andere wert angezeigt

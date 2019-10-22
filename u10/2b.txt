@@ -1,0 +1,45 @@
+//Uebungsblatt 10 // Petko Antonov // Yuwei Nan
+//Aufgabe 2 b
+
+Jetz funktioniert der Stack genau so wie der in dem ersten Teil mit
+dem einzigen Unterschied dass jetz immer wenn Elementen hinzugefugt
+oder entfernt werden, wird geprueft ob die Groesse des Aarrays im
+Speicher nicht viel groesser und nie kleiner als die Anzahl der
+gerspeicherte Elementen.
+
+	Ich ereuge erstens ein neues Stack der am Anfang
+	0 Elementen besitzt und platz fur Ein Object hat.
+
+	Dann wenn ich ein Element hinzufuge,
+	wird den Srtack nicht resized.
+
+	Wenn ich aber ein weiteres hinzufuge,
+	muss das 'capacity' erhoeht werden.
+
+	Die funktion resize ist() iniziert.
+
+	Besser kann man weter sehen in der Datei Selbst.
+
+Ich habe es so gesetzt dass 'resize' beim Allozierung des neues Array
+noch genug Speicherplatz fuer 4 weitere ( + der Zweite) Elementen hat.
+So muss das Array nicht jedes mal gewaechselt werden.
+
+
+
+///Vergleichen////////////////////////////////////////////////////////////////////
+
+Diese Implementiergung macht mehr Sinn als die lezte weil jetz wird
+viel weniger speicher fuer dieselbe Datenmenge gebraucht.
+
+Es koennte auch verbessert werden und duer verschiedene Anwendungen
+angepasst. (z.B mehr if statements fuer praezisere 'resizing')
+
+Eine Vorteil diese beide Implementierungen ist dass jede einzelne
+Element in einem Array koennte individuel erreicht werden.
+(ohne die andere erst zu entfernen)
+
+
+
+
+
+

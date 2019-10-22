@@ -1,0 +1,24 @@
+//Uebungsblatt 10 // Petko Antonov // Yuwei Nan
+//Aufgabe 3 a 
+ 
+Eine Queue mit verketteten Knoten funktioniert ahnlicherweise wie ein 
+Stack (mit verketteten Knoten) der nicht Frist one in Last one out, 
+sondern First one in first one out. 
+
+Zuerst wird ein neues Unterclass von Queue (VKSchlange) erzeugt
+
+	1.	Ein Struct (wartende) mit einem Wert oder Object und ein pointer zum naechsten 
+		Elenent wird konstruiert. Diese dient um die Daten fuer jedes 
+		Element der Queue zu beinhalten und den naechsten Element 
+		aufzuweisen. 
+		
+	2.	Noch die Attribute int anzahl( anzahl der wartende structs in der schlange nachweisen)
+		und ersten(pointer zum ersten element )
+		
+	3.	Es werden Konstructoren (copy,zuweisungoperator) bzw. Destruktoren
+		implenentiert die Ein neues Object aka Warteschlange erzeugen 
+		(bzw. Zerstoeren)
+
+	4. 	Methoden zum enqueue dequeue ist_empty etc. werden implementert 
+		Diese erzeugen zerstoeren und liefern pointers zum Elemente 
+		aka wartende Structs. 

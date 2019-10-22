@@ -1,0 +1,22 @@
+u4
+1d
+
+
+Call by reference -  waere in der Faelle nutzlich, wenn die Eingabe variable nicht von andere 
+	Funktionen benutzt werden muss. Zum beispiel in der Fall von dna wo es im lauf der 
+	Prozesse veraendert wurde und dass Ergebnis davon nicht beeinflusst war. 
+	Der Sinn ist Speicherplatz zu sparen, und es kann immer wenn moeglich eingewendet 
+	werden wenn man den Speicher wirklich "sauber" halten will bzw wenn Speicherplatz 
+	begrenzt ist.  
+
+
+	Wenn man eine variable by reference passt funktioniert sie als eine globale variable 
+	und venn man dasss irgendwie veraendert wird die originale wert verloren.
+
+	Es macht am meistens sinn fur einfache, von einander unabhangige programme die 
+	in hohen Anzahlt verwendet werden.
+	
+
+Call by Value - Macht sinn wenn man fehler vermeiden will, und wenn die gespeicherte wert 
+	spaeter noch einmal verwendet wird. Ich glaube ich habe auch gelesen dass Call by 
+	Value in der Regel schneller als call by reference ist.   

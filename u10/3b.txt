@@ -1,0 +1,42 @@
+//Uebungsblatt 10 // Petko Antonov // Yuwei Nan
+//Aufgabe 3 b c 
+
+Eine Queue mit Arrays hat dieselbe Funktionalitaet wie eine 
+Queue mit VK. (selbe Methoden )
+
+	1. Als private: 
+		- pointer zum array mit Elementen der Class E 
+		- ein 'capacity' Nachweiss-attribut
+		- ein 'anzahl' (der elemente in Array/Queue) Nachweiss-attribut
+	
+	2.	Als public/ protected 
+		- Konstruktoren/Destructoren auch copy etc. 
+			erzeugen/zerstoeren Array mit genug platz fuer 3/5/10 Elementen
+		
+		- resize() 
+			waechselt Lage/Bedarf des Arrays in Speiche. 
+			
+		- alle Methoden von Queue implementieren 
+		
+		- enqueue prueft ob in Array genug Speicherplatz gibt und dannach 
+			speichert naechstens element am naechsten 'freien' Platz 
+			
+		- dequeue liefert ein Copy des ersten Elements : 
+			vieleicht speichert es den Wert in eine neue Variable
+			dannach resized es den Array und fuegt in das neue alle 
+			Elemente ab zweiten dahin. Dannach loescht es das alte Array.
+			
+		- first liefert nur pointer zum ersten element der liste 
+		
+		-Wrap-around 
+			Caesar Cipher wird benutzt um das alte Array wieder zu 
+			verwenden wenn nicht mehr als eine maxSize anzahl von 
+			Elemente im Warteschlange sich befinden. 
+			
+		
+		
+//VERGLEICHEN/////////////////////////////////////////////////////////////////////////
+
+
+Die Array Inplementierung hat natuerlich das Vorteil dass man jesdes Element 
+zugreifen kann. 

@@ -1,0 +1,16 @@
+////2b//////
+diese aufgabestellung konnte ich nicht ganz gut verstehen 
+
+ich würde erstens die woche tag fur tag definieren 
+
+int Mo = 1 
+int Di = 2 
+int Mi = 3 
+int Do = 4 
+int Fr = 5 
+int Sa = 6
+int So = 7 
+ 
+ und jetzt würde ich heap_sort anwenden 
+ 
+dannach würde ich die ausgabeliste in liste von tage umwandeln 

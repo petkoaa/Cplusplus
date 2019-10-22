@@ -1,0 +1,4 @@
+- die globale variablen existieren in alle blocke ::a ::b
+- a und b existieren in alle blocke auch aber sind in jeder block vershieden deffiniert 
+	und wenn die nicht explizit deffiniert sind werden die globale a und b genommen 
+- i existiert nur in For scheife des int main blocks

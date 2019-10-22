@@ -1,0 +1,20 @@
+u4
+1c
+
+
+1) cout << reverse_compl1(dna) << endl;	   =====> 	ACCTGT    
+2) cout << dna << endl;			   =====>       ACAGGT
+3) cout << reverse_compl2(dna) << endl;    =====>       ACCTGT
+4) cout << dna << endl;			   =====>       TGTCCA
+
+
+1) Das Revarsed-Komplement von der Eingabestrand ist jetz angezeigt (reverse_compl1)
+2) Eingabe string "dna" angezeigt. Nichts war im Lauf der Program verandert 
+3) Die Reversed Komplement noch einmal gezeigt dieses mal war die Funktion reverse_compl2 
+	benutzt, und die hat das selbe Ergebnis. 
+4) Dna ist jetzt zur Komplement der Eingabe string umgewandelt;
+	Das passiert als effekt der funktion "reverse_compl2" die "Call by Refference" in 
+	Bezug auf "dna" benutzt. Der einzelne unterschiedliche Symbol "&" in der Definition
+	von reverse_compl2  resultiert dass die variable "dna" jetz als pointer an der 
+	Funktion reverse_compl2 weitergegeben wird und in der For-Schleife (zeile 42) 
+	dna wird als Komplement der Eingabestring neudefiniert.    

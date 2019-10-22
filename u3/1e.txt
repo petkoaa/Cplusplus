@@ -1,0 +1,4 @@
+als ich schon in 1c.txt geschrieben habe die erste 2 von die lezten 3 zeilen sind die adresse 
+von i ins RAM der verandert sich nicht in die ganze programm nicht 
+und er lezte wert ist eine zu grosse wert fur die datentyp int 
+uber die negative zahlen wurde ich sagen habe auch was mit dielimitierungen von int zu tun 

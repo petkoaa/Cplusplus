@@ -1,0 +1,9 @@
+Stabil heisst dass wenn einige elemente aus dem Eingabe array gleich sind, wenden diese 
+elemente in die Ausgabe Array in die gleiche Reihenfolge angegeben.
+
+Alle unstabile Sortieralgorithmen konnen im stabil gemacht werden ohne viel Steigerung 
+im Komplexitaetniveau.
+
+Stabile algorithmen: Insertion sort, Merge Sort, Bubble Sort
+
+Unstabile algrithmen: Heap Sort, Quick Sort, Selection sort 

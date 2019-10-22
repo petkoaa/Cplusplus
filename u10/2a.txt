@@ -1,0 +1,61 @@
+//Uebungsblatt 10 // Petko Antonov // Yuwei Nan
+//Aufgabe 2 a)
+//alle implementierungen in dynamic- und staticarraystack.cpp zu finden
+
+//Beispiel//////////////////////////////////////////////////////////////////////////
+
+In der Regel soll ein Stack mit arrays genau die selbe Funktionalitaet wie 
+ein Stack mit verkettete Knoten haben. First one in last one out. 
+
+Zum Beispil ber der Datei staicarraystack.hpp wenn ich ein stack mit elementen 
+aus der class MyClass erzeugen will, muss ich erstens der Konstruktor der 
+class StaticArrayStack bsp_stack; aufrufen. 
+
+Dass konstruert fur mich ein leeren Stack mit dem Name bsp_stack mit attribute
+anzahl=0, capacity=1000, und alloziert Speicherplatz fuer einen neuen Array 
+(in dem der Stack gespeichert ist) wo insgesamt 1000 elementen von dem Dantetyp
+MyClass gespeichert werden koennen.    
+
+Das neu erzreugte Object(bsp_stack) ist jetz auch eine Instaze der 
+Interface-Class "Stack" . 
+
+Wollte ich ein euer element der Class MyClass in der neuen Stack hinzufuegen 
+muss ich der Methode  bsp_stack.push(elem)  anwenden wo natuerlich elem 
+eine Instaze der class MyClass ist. Das lezte hat dann als Effekt
+dass der nachste "freie" Platz in meinem bsp_stack (in diesem Fall 0) 
+mit dem Wert die in elem gespeichert ist ueberschrieben. Und der anzahl der 
+Elementen in der stack bsp_stack ist um 1 erhoeht. 
+
+   
+	StaticArrayStack(const StaticArrayStack<E> & s) -- Copy konst.
+		ein neues Stack ist erzeugt mit dem selben parameters als 
+		der Stack "s". Und auch dem selben Elementen besitzt.
+		Das lezte wird mit hilfe von einem for -Schleife gemacht.
+
+	StaticArrayStack<E>& operator=(const StaticArrayStack<E> & s) -- Zuweiss.Op.
+		ein schon existierenden Stack wird alle elemente der zuweisenden Stack 
+		gegeben. (nue wenn der Stack nicht sich selbst zuweist )
+		Zuerst der anzahl der elemnte ist auf 0 gesetzt dann ist der alten 
+		Array geloescht. Nachdem ist ein neues Array alloziert und alle elemente 
+		der zuweisenden Stack werden dort copiert und hinzugefuegt 
+		
+Wenn man objecte loeschen will muss dass mit dem keyword delete gemacht werden 
+da der Arrays statisch alloziert sind.
+
+
+//VERGLEICHEN//////////////////////////////////////////////////////////////////////////
+
+Die beiden Implementierungen koennen verschiedene Vor- und Nachteile,
+im Bezug zur Speicherplatz und  bei Komplexitaetsniveau, haben. 
+
+Die goeste davon wahrscheinlich dass fuer jedes neues Object aka Stack 
+soll ein Array mit statische Groesse 1000, dynamisch alloziert werden, egal ob es 5 
+oder 500 Elementen beinhaltet. Das wuerde sehr schleicht auswirken wenn mehrere 
+Stacks auf einmal implementiert werden sollen. 
+
+Anderseits ist der Destruktor der StatischArrayStack optimaler als der von StackImpl 
+weil, bei der zweite wird eine while Schleife genutzt O(n) und bei StatischArrayStack wird 
+das Array einfach geloescht. Das ist aber ziemlich unwesentlich. 
+
+
+

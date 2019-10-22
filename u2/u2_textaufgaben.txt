@@ -1,0 +1,11 @@
+aufgabe 1 
+
+a) - do {//code}while(//bedingung) - Schleife:
+	
+	Diese schleife erlaubt dass ein code so viel mal ausgefurt wurde bis eine ende 
+	Bedingung nicht mehr erfullt ist.
+	D.h. Der Code wird wenigstens einmal ausgefuhrt ehe die Bed. erst gepruft ist. 
+
+
+d)	Die while Schleife macht mehr Sinn wenn mann nicht sicher ist ob die Anfangswert 
+	die Bedingung erfullt oder nicht. 

@@ -1,0 +1,29 @@
+firstRecc ( L, M, a, [l1,..,ln] ) 
+
+	{
+		int index [];
+		
+		if ( (L-a) > M ) {
+			firstRecc( 	( findeTstelle ( M, a, [l1,..,ln], index)   );   
+			
+
+		}else{ return index  / print index  } 
+	}
+
+
+
+findeT-stelle (L, M, a, [T-Stellen], index ) 
+	{
+			
+			while ( ( M + kmZahl) > head[T-Stellen] ) 
+			{
+				
+				kmZahl = kmZahl + head[l1..ln];
+
+				index = concatenate ( index,  head[T-Stellen] );
+
+				remove head from [T-Stellen];      
+			}
+					
+			return ( L, M, a, [T-Stellen] ) ; 
+	}   

@@ -1,0 +1,38 @@
+//Uebungsblatt 9 Petko Antonov Yuwei Nan 
+
+//Aufgabe 1 
+
+a)  Hilfsmethoden als private deklarieren weil so kann man in verschiedene Klassen die selbe Variablename haben.
+		Bsp. 	
+			 ein class mensch mit int groesse;
+			 ein class tier mit int groesse;  
+			 
+			 
+			 
+			 
+b)	Genau wie bei andere Funktionen eine Spezifikation liefert nutzliche Information uber den Code und macht es einfacher zu lesen. 
+	So kann man besser den program verwalten. 
+	
+	
+	
+c)	Wenn man eine Variable als const deklariert kann sie nicht mehr im Gang des Programs veraendert werden. 
+	Wenn eine Funktion/Methode als const deklariert ist kann diese funktion nicht mehr das Parameter veraendern. 
+	Wird genutzt um Fehler zu vermeiden.
+		Bsp.
+			virtual figur ()const{}		diese virtuelle funktion (und ihre Kinder) darf nicht die Parameter veraendern.
+			
+			
+
+d)	Beim Statische Allozierung wird automatisch eine von Program am ende eingesetzt. Bei Dynamische aber nicht.
+
+
+
+e)	Speicherplatz sparen wenn ein object per Value gepast ist alloziert der compiler  jedes man neues Speicherplatz und dass kann 
+	in manche Faelle zum bottlenecks oder so was fuehren.
+	
+	
+		
+f)	Wenn der Dekonstruktor der Unterklasse aufgerufen wird wird auch der von dem Oberklasse aufgerufen und so wird 
+	noch Speicherplatz freigesetzt. 
+		Bsp 
+			virtual ~ classname (){} =0;  

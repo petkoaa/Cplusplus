@@ -1,0 +1,144 @@
+unsigned parent(unsigned i) {return (i - 1) / 2;} // Elternknoten
+unsigned lchild(unsigned i) {return 2 * i + 1;} // Linkes Kind
+unsigned rchild(unsigned i) {return 2 * i + 2;} // Rechtes Kind
+
+void hochblubbern(vector<char> & heap, unsigned i) {
+	if (i > 0 && heap[i] > heap[parent(i)]){
+		tausche(heap, i, parent(i));
+		hochblubbern(heap, parent(i));
+	}
+}
+
+void insert(vector<char> & heap, char x) {
+	heap.push_back(x);
+	hochblubbern(heap, heap.size() - 1);
+}
+
+int main () {
+	vector <char> vec;
+    char ch [8] = {'H', 'E', 'X', 'A', 'D', 'C', 'I', 'M'};
+    for (unsigned i=0; i<8; i++){   insert (vec, ch[i]);
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+Zeile	|Effekt
+20		insert (myvec, H)
+12		insert (myvec, H)
+13		myvec.push_back(H)
+14		hochblubbern(myvec, 0)
+5		hochblubbern(myvec, 0) // i!>o aslo nix passiert
+20 		insert (myvec, E) 
+12		insert (myvec, E)
+13 		myvec.push_back(E)
+14		hochblubbern(myvec, 1)
+5		hochblubbern(myvec, 1)
+6 		1>0 aber int E < int H also nix passiert (myvec = <E,H>)
+20		insert (myvec, X)
+12		insert (myvec, X)
+13 		myvec.push_back(X)
+14		hochblubbern(myvcec,2)
+5		hochblubbern(myvcec,2)
+6 		2>0 && int X> int H also 
+7 		tausche (myvec, 2, 0) 
+8		hochblubbern(myvec, 0)
+5		hochblubbern(myvec, 0)
+6		i!>0 also nix passiert  //myvec jetzt <X,E,H>
+20 		insert (myvec, A)
+12		insert (myvec,A)
+13		push_back(myvec, A)
+14		hochblubbern(myvec, 3)
+5		hochblubbern(myvec, 3)
+6		3>0 aber int A < int E // nic passiert 
+20 		insert(myvec, D)
+12		insert(myvec, D)
+13		myvec.pushback(D)
+14		hochblubbern(myvec, 4)
+5		hochblubbern(myvec, 4)
+6		4>0 aber D<E also nix passiert //myvec = <X,E,H,A,D>
+20		insert (myvec,C)
+12		insert (myvec,C)
+13		myvec.push_back(C)
+14		hochblubbern(myvec, 5)
+5		hochblubbern(myvec, 5)
+6		5>0 aber C<H // nix passsiert
+20		insert(myvec, I)
+5		hochblubbern(myvec, 6)
+6		6>0 && I>H
+7		tausche(myvec,6,2)			//myvec= <X,E,I,A,D,C,H>
+8		hochblubbern(myvec, 2)
+6		I<X also nix passiert
+20		insert (myvec, M)
+5		hochblubern (myvec, 7)
+6		7>0 && M>A
+7		tausche (myvec,7,3)  //myvec =<X,E,I,M,D,C,H,A>
+8		hochblubern(myvec, 3)
+6		3>0 && M>E
+7		tausche (myvec,3,1)
+8		hochblubbern(myvec,1)
+6		1>0 aber M!>X also nix passiert // myvec= <X,M,I,E,D,C,H,A> 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+int extract_max(vector<int> & heap) {
+	int max = heap[0];
+	tausche(heap, 0, heap.size() - 1);
+	heap.pop_back();
+	versickern(heap, 0, heap.size());
+	return max;
+
+
+void versickern(vector<int> & heap, unsigned i, unsigned size) {
+	// Abbruchbedingungen: Wir sind ganz unten im Heap angekommen
+	// oder die Heap-Eigenschaft ist bereits erfüllt.
+	if ((lchild(i) >= size || heap[lchild(i)] <= heap[i]) &&
+	    (rchild(i) >= size || heap[rchild(i)] <= heap[i])) return;
+	
+	// Berechne die Position des Elements mit dem getauscht wird.
+	unsigned next_i = lchild(i);
+	if (rchild(i) < size && heap[rchild(i)] > heap[lchild(i)])
+		next_i = rchild(i);
+	
+	// Tausche mit dem entsprechenden Kind und mache rekursiv weiter.
+	tausche(heap, i, next_i);
+	versickern(heap, next_i, size);
+}
+
+
+/////////////////////////////////////////////////////////////
+
+Zeile	|Effekt
+86		extrakt_max (myvec)
+87 		max = X
+88		tausche (myvec, 0, 7) 							//myvec = <A,M,I,E,D,C,H,X>
+89		pop_back (myvec)								//myvec = <A,M,I,E,D,C,H>
+90		verschickern (myvec, 0, 7) 
+94 		verschickern (myvec, 0, 7) 
+102		2<7 && myvec[2] !> myvec[1] also: next_i=1
+106		tausche (heap, 0, 1)							//  myvec =<M,A,I,E,D,C,H>
+94	 	verschickern (myvec, 1, 7)
+106 	tausche (myvec, 3, 1) 
+94		verschickern(myvec, 3, 7)
+97		7=7 && 8>7 also return;							// also myvec = <M,E,I,A,D,C,H>
+
+
+86		extract_max(myvec)
+88		max = X
+88		tausche (myvec, 0, 7) 							//myvec = <E,I,A,D,C,H>
+89		pop_back (myvec)								//myvec = <E,I,A,D,C,H>
+90		verschickern (myvec, 0, 6) 
+106		tausche (myvec, 0, 1)							//myvec = <I,E,A,D,C,H>
+94		verschickern(myvec, 1, 6)
+97		heap[lchild(i)] <= heap[i] && heap[rchild(i)] <= heap[i] also return
+
+
+
+
+
+
+
+
+
